@@ -24,9 +24,6 @@ if video_file is not None:
     video_cap.open(video_file.name)
     detection_data = main(video_file.name, "Output.avi")
 
-    # Display the processed video
-    # st.video(processed_video, format="video/mp4")
-
     # Create a DataFrame with detection information
     # detection_df = pd.DataFrame(detection_data, columns=["Class", "Confidence", "Box"])
     st.write("Object Detection Results:")
@@ -36,21 +33,15 @@ if video_file is not None:
     # Save the DataFrame to Excel
     filename = "Output.csv"
     detection_data.to_csv(filename, index=False)
-    # st.info(f"Detection results saved to {excel_file.name}")
 
-    # Hyperlink to download the Excel file
-    # st.markdown(f"**Download Excel File:** [Download Excel](data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{filename})")
     st.markdown(f"Download [CSV results](data:file/csv;base64,{base64.b64encode(open(filename, 'rb').read()).decode()})")
 
-    # Hyperlink to download the processed video
-    # video_file_name = video_file.name.split(".")[0] + "_processed.mp4"
-    # cv2.imwrite(video_file_name, processed_video)
     video_file_name = "Output.avi"
     result_video_bytes = open(video_file_name, "rb").read()
-    # st.markdown(f"**Download Processed Video:** [Download Video](data:video/mp4;base64,{video_file_name})")
-    # st.markdown(f"**Download Processed Video:** [Download Video](data:video/mp4;base64,{(result_video_bytes).decode()})")
+    
     st.markdown(f"**Download Video:** [Output Video](data:video/avi;base64,{base64.b64encode(result_video_bytes).decode()})")
 
+    video_cap.release()
 
     if os.path.exists(video_file.name):
         os.remove(video_file.name)
