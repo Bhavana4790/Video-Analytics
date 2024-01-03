@@ -14,7 +14,7 @@ from ultralytics import YOLO
 model_person = YOLO("yolov8x.pt")
 model_person.fuse()
 
-model_helmet = YOLO('best.pt')
+model_helmet = YOLO('models/best.pt')
 
 
 def excel_results(frame_num, result, names):
