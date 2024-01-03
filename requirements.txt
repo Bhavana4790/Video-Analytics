@@ -4,3 +4,4 @@ IPython
 pandas
 pybase64
 streamlit
+opencv-python
