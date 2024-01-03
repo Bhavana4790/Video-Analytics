@@ -1,4 +1,4 @@
-apt install libgl1-mesa-glx
+!apt install libgl1-mesa-glx
 #opencv-python
 ultralytics
 supervision
