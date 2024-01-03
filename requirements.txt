@@ -1,8 +1,9 @@
-!apt-get update && apt-get install libgl1
+#!apt-get update && apt-get install libgl1
+streamlit
 #opencv-python
 ultralytics
 supervision
 IPython
 pandas
 pybase64
-streamlit
+opencv-python-headless
