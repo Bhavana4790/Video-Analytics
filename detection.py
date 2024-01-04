@@ -11,14 +11,18 @@ import os
 import cv2
 from ultralytics import YOLO
 import streamlit as st
+
+model_person = YOLO("yolov8x.pt")#.cuda()
+model_person.fuse()
+
+
+
 @st.cache
 def load_model():
-  model_person = YOLO("yolov8x.pt")#.cuda()
-  model_person.fuse()
+# model_helmet = YOLO('models/best.pt')#.cuda()
+ return YOLO('models/best.pt')#.cuda()
 
-# @st.cache
-model_helmet = YOLO('models/best.pt')#.cuda()
-
+model_helmet = load_model()
 
 def excel_results(frame_num, result, names):
   track_id = result.tracker_id
