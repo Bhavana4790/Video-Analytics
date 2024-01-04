@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import io
 import os
-from detection import *
+from detection import main
 import base64
 
 st.title("Video Analytics")
