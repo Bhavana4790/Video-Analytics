@@ -5,7 +5,7 @@ import os
 from detection import *
 import base64
 
-st.title("Object Detection Streamlit App")
+st.title("Video Analytics")
 
 # File uploader for video input
 video_file = st.file_uploader("Upload a video file", type=["mp4", "avi", "mov"])
@@ -45,3 +45,5 @@ if video_file is not None:
 
     if os.path.exists(video_file.name):
         os.remove(video_file.name)
+
+    st.cache_data.clear()
