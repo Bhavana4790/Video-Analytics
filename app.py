@@ -26,7 +26,8 @@ if video_file is not None:
     video_cap = cv2.VideoCapture()
     video_cap.open(video_file.name)
     detection_data = main(video_file.name, "Output.avi")
-
+    video_cap.release()
+    
     # Create a DataFrame with detection information
     # detection_df = pd.DataFrame(detection_data, columns=["Class", "Confidence", "Box"])
     st.write("Object Detection Results:")
@@ -44,9 +45,7 @@ if video_file is not None:
     
     st.markdown(f"**Download Video:** [Output Video](data:video/avi;base64,{base64.b64encode(result_video_bytes).decode()})")
 
-    video_cap.release()
-
     if os.path.exists(video_file.name):
         os.remove(video_file.name)
 
-    st.cache_data.clear()
+    # st.cache_data.clear()
