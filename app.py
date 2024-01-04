@@ -4,6 +4,7 @@ import io
 import os
 from detection import main
 import base64
+import numpy as np
 
 st.title("Video Analytics")
 
