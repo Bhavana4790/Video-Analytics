@@ -12,8 +12,9 @@ import cv2
 from ultralytics import YOLO
 import streamlit as st
 @st.cache
-model_person = YOLO("yolov8x.pt")#.cuda()
-model_person.fuse()
+def load_model():
+  model_person = YOLO("yolov8x.pt")#.cuda()
+  model_person.fuse()
 
 # @st.cache
 model_helmet = YOLO('models/best.pt')#.cuda()
