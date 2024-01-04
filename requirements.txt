@@ -1,8 +1,9 @@
-!apt-get update
-!apt-get install ffmpeg libsm6 libxext6  -y
+#!apt-get update
+#!apt-get install ffmpeg libsm6 libxext6  -y
+#!apt-get update && apt-get install -y python3-opencv
+ultralytics #==8.0.232
 streamlit==1.29.0
 IPython #== 8.19.0
-ultralytics #==8.0.232
 supervision #==0.17.1
 pandas #==2.1.4
 pybase64 #==1.3.2
