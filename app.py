@@ -38,12 +38,10 @@ if video_file is not None:
     filename = "Output.csv"
     detection_data.to_csv(filename, index=False)
 
-    st.markdown(f"Download [CSV results](data:file/csv;base64,{base64.b64encode(open(filename, 'rb').read()).decode()})")
-
     video_file_name = "Output.avi"
     result_video_bytes = open(video_file_name, "rb").read()
-    
-    st.markdown(f"**Download Video:** [Output Video](data:video/avi;base64,{base64.b64encode(result_video_bytes).decode()})")
+    st.markdown(f"Download Video: [Output Video](data:video/mp4;base64,{base64.b64encode(result_video_bytes).decode()})")
+    st.markdown(f"Download [CSV results](data:file/csv;base64,{base64.b64encode(open(filename, 'rb').read()).decode()})")
 
     if os.path.exists(video_file.name):
         os.remove(video_file.name)
