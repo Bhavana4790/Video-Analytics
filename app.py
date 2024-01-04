@@ -5,6 +5,8 @@ import os
 from detection import main
 import base64
 import numpy as np
+import cv2
+import pandas as pd
 
 st.title("Video Analytics")
 
