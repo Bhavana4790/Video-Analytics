@@ -2,7 +2,7 @@ from IPython import display
 display.clear_output()
 
 import ultralytics
-ultralytics.checks()
+# ultralytics.checks()
 
 import supervision as sv
 import numpy as np 
