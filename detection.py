@@ -11,10 +11,10 @@ import os
 import cv2
 from ultralytics import YOLO
 
-model_person = YOLO("yolov8x.pt").cuda()
+model_person = YOLO("yolov8x.pt")#.cuda()
 model_person.fuse()
 
-model_helmet = YOLO('models/best.pt').cuda()
+model_helmet = YOLO('models/best.pt')#.cuda()
 
 
 def excel_results(frame_num, result, names):
