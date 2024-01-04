@@ -1,3 +1,5 @@
+apt-get update
+apt-get install ffmpeg libsm6 libxext6  -y
 streamlit==1.29.0
 IPython == 8.19.0
 ultralytics==8.0.232
