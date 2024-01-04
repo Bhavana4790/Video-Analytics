@@ -146,7 +146,7 @@ def main(SOURCE_VIDEO_PATH, TARGET_VIDEO_PATH):
             Res1, Res2 = callback1(frame, index, selected_classes, byte_tracker, byte_tracker1, trace_annotator, box_annotator, line_zone, line_zone_annotator, sink)
             Md1_res.append(Res1)
             Md2_res.append(Res2)
-            # break
+            break
 
     Opt1 = pd.DataFrame(Md1_res, columns = Md1_res[0].keys())
     Opt2 = pd.DataFrame(Md2_res, columns = Md2_res[0].keys())
