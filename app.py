@@ -25,7 +25,7 @@ if video_file is not None:
     np_video = np.frombuffer(video_bytes, dtype=np.uint8)
     video_cap = cv2.VideoCapture()
     video_cap.open(video_file.name)
-    detection_data = main(video_file.name, "Output.avi")
+    detection_data = main(video_file.name, "Output.mp4")
     video_cap.release()
     
     # Create a DataFrame with detection information
