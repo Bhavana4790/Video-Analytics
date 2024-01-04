@@ -30,8 +30,8 @@ if video_file is not None:
     
     # Create a DataFrame with detection information
     # detection_df = pd.DataFrame(detection_data, columns=["Class", "Confidence", "Box"])
-    st.write("Object Detection Results:")
-    st.write(detection_data)
+    # st.write("Object Detection Results:")
+    # st.write(detection_data)
 
 
     # Save the DataFrame to Excel
